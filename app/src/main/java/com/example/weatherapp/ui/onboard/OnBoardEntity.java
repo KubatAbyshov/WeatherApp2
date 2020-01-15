@@ -1,4 +1,4 @@
-package com.example.weatherapp.data.entity;
+package com.example.weatherapp.ui.onboard;
 
 public class OnBoardEntity {
     private String title;

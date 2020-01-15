@@ -3,7 +3,6 @@ package com.example.weatherapp.ui.onboard;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -12,13 +11,13 @@ import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.Toolbar;
-import androidx.viewpager.widget.PagerAdapter;
+
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.weatherapp.R;
-import com.example.weatherapp.data.entity.OnBoardEntity;
 import com.example.weatherapp.ui.base.BaseActivity;
 import com.example.weatherapp.ui.main.MainActivity;
+import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -29,14 +28,12 @@ public class OnBoardActivity extends BaseActivity {
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
-
     @BindView(R.id.viewpager)
     ViewPager pager;
     @BindView(R.id.btn_next)
     Button button;
 
-    private Button btn_start;
-    private Button btn_next;
+
 
     private int currentItem;
 
@@ -51,11 +48,12 @@ public class OnBoardActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setSupportActionBar(toolbar);
         Objects.requireNonNull(getSupportActionBar()).setDisplayShowTitleEnabled(false);
-        btn_next = findViewById(R.id.btn_next);
+        TabLayout tabLayout = findViewById(R.id.tabLayout);
+        tabLayout.setupWithViewPager(pager, true);
+
         init();
         setupClickListener();
     }
-
 
 
     @Override
@@ -128,5 +126,6 @@ public class OnBoardActivity extends BaseActivity {
     public void Click(View view) {
         pager.setCurrentItem(currentItem + 1);
     }
+
 
 }

@@ -8,11 +8,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewpager.widget.PagerAdapter;
 
 import com.example.weatherapp.R;
-import com.example.weatherapp.data.entity.OnBoardEntity;
 
 import java.util.ArrayList;
 
@@ -22,6 +20,9 @@ public class OnBoardAdapter extends PagerAdapter {
 
     private ArrayList<OnBoardEntity> resource;
 
+    ImageView imageView;
+    TextView textView;
+
     public OnBoardAdapter(ArrayList<OnBoardEntity> resource) {
         this.resource = resource;
     }
@@ -29,15 +30,18 @@ public class OnBoardAdapter extends PagerAdapter {
     @NonNull
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
-        View view = LayoutInflater.from(container.getContext()).inflate(R.layout.item_onboard, null);
-        initView(view, container, position);
-        return view;
-    }
+        LayoutInflater inflater = (LayoutInflater) container.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View view = inflater.inflate(R.layout.item_onboard , container , false);
 
-    private void initView(View view, ViewGroup container, int position) {
-        ImageView imageView = view.findViewById(R.id.imgOnBoard);
-        imageView.setImageDrawable(container.getContext().getResources().getDrawable(resource.get(position).getImg()));
+        imageView = view.findViewById(R.id.imgOnBoard);
+        textView = view.findViewById(R.id.onboard_text);
+
+        imageView.setImageResource(resource.get(position).getImg());
+//        textView.setText(resource.get(position).getTitle());
+
         container.addView(view);
+
+        return view;
     }
 
     @Override

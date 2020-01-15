@@ -6,15 +6,372 @@
     android:layout_height="match_parent"
     tools:context=".ui.main.MainActivity">
 
+
+    <View
+        app:layout_constraintTop_toBottomOf="@id/up_back"
+        android:id="@+id/down_back"
+        android:background="#FFFFFF"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <View
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/up_back"
+        android:background="#F4511E"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"/>
+
+
     <TextView
-        android:id="@+id/tvTvMain"
+        android:id="@+id/date"
+        android:layout_marginTop="80dp"
+        android:layout_marginLeft="30dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello"
-        android:padding="@dimen/small_margin"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="29"
+        android:textStyle="bold"
+        android:textColor="#fff"
+        android:textSize="60sp"
         app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/up_back"/>
+
+    <TextView
+        android:id="@+id/months"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="February"
+        android:textStyle="bold"
+        android:textColor="#fff"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toRightOf="@id/date"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/up_back"/>
+
+    <TextView
+        android:id="@+id/years"
+        android:layout_marginLeft="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2020"
+        android:textStyle="bold"
+        android:textColor="#fff"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toRightOf="@id/date"
+        app:layout_constraintTop_toBottomOf="@id/months" />
+
+
+    <ImageView
+        android:id="@+id/place"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="30dp"
+        android:background="@drawable/ic_place_black_24dp"
+        app:layout_constraintTop_toBottomOf="@id/up_back"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="25dp"
+        android:layout_height="25dp"/>
+
+    <TextView
+        android:id="@+id/city_and_state"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:text="Bishkek, Kyrgyzstan"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toRightOf="@id/place"
+        app:layout_constraintTop_toBottomOf="@id/up_back" />
+
+    <ImageView
+        android:id="@+id/clouds"
+        android:layout_marginTop="-20dp"
+        android:layout_marginLeft="30dp"
+        android:foregroundGravity="fill"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/place"
+        android:layout_width="150dp"
+        android:layout_height="150dp"/>
+
+    <TextView
+        android:id="@+id/now"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Now"
+        android:textStyle="bold"
+        android:textColor="#F4511E"
+        android:textSize="15sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/clouds" />
+
+    <TextView
+        android:id="@+id/today"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="180dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Today"
+        android:textStyle="bold"
+        android:textColor="#F4511E"
+        android:textSize="15sp"
+        app:layout_constraintLeft_toRightOf="@id/now"
+        app:layout_constraintTop_toBottomOf="@id/clouds" />
+
+    <TextView
+        android:id="@+id/temp_now"
+        android:layout_marginLeft="30dp"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="21°"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/now" />
+
+    <TextView
+        android:id="@+id/temp_now_clouds"
+        android:layout_marginLeft="30dp"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Little Cloud"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/temp_now" />
+
+    <TextView
+        android:id="@+id/temp_today_max"
+        android:layout_marginLeft="60dp"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:text="28°"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        app:layout_constraintLeft_toRightOf="@id/temp_now"
+        app:layout_constraintTop_toBottomOf="@id/today" />
+
+    <TextView
+        android:id="@+id/temp_today_max_down"
+        android:layout_marginLeft="60dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Max"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        app:layout_constraintLeft_toRightOf="@id/temp_now_clouds"
+        app:layout_constraintTop_toBottomOf="@id/temp_today_max" />
+
+
+    <TextView
+        android:id="@+id/temp_today_min"
+        android:layout_marginLeft="10dp"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:text="18°"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        app:layout_constraintLeft_toRightOf="@id/temp_today_max"
+        app:layout_constraintTop_toBottomOf="@id/today" />
+
+    <TextView
+        android:id="@+id/temp_today_min_down"
+        android:layout_marginLeft="65dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Min"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        app:layout_constraintLeft_toRightOf="@id/temp_today_max_down"
+        app:layout_constraintTop_toBottomOf="@id/temp_today_min" />
+
+    <TextView
+        android:id="@+id/wind"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wind"
+        android:textStyle="bold"
+        android:textColor="#F4511E"
+        android:textSize="15sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/temp_now_clouds" />
+
+    <TextView
+        android:id="@+id/wind_text"
+        android:layout_marginLeft="30dp"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="SW 4m/s"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/wind" />
+
+    <TextView
+        android:id="@+id/pressure"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="180dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pressure"
+        android:textStyle="bold"
+        android:textColor="#F4511E"
+        android:textSize="15sp"
+        app:layout_constraintLeft_toRightOf="@id/wind"
+        app:layout_constraintTop_toBottomOf="@id/temp_now_clouds" />
+
+    <TextView
+        android:id="@+id/pressure_text"
+        android:layout_marginLeft="10dp"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="1010mb"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        app:layout_constraintLeft_toRightOf="@id/wind_text"
+        app:layout_constraintTop_toBottomOf="@id/wind" />
+
+    <TextView
+        android:id="@+id/humidity"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Humidity"
+        android:textStyle="bold"
+        android:textColor="#F4511E"
+        android:textSize="15sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/wind_text" />
+
+    <TextView
+        android:id="@+id/humidity_text"
+        android:layout_marginLeft="30dp"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="81%"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/humidity" />
+
+    <TextView
+        android:id="@+id/cloudiness"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="150dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cloudiness"
+        android:textStyle="bold"
+        android:textColor="#F4511E"
+        android:textSize="15sp"
+        app:layout_constraintLeft_toRightOf="@id/humidity"
+        app:layout_constraintTop_toBottomOf="@id/pressure_text" />
+
+    <TextView
+        android:id="@+id/cloudiness_text"
+        android:layout_marginLeft="60dp"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="100%"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        app:layout_constraintLeft_toRightOf="@id/humidity_text"
+        app:layout_constraintTop_toBottomOf="@id/cloudiness" />
+
+    <TextView
+        android:id="@+id/sunrise"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sunrise"
+        android:textStyle="bold"
+        android:textColor="#F4511E"
+        android:textSize="15sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/humidity_text" />
+
+    <TextView
+        android:id="@+id/sunrise_text"
+        android:layout_marginLeft="30dp"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="6:00"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        android:format24Hour = "hh:mm"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sunrise" />
+
+    <TextView
+        android:id="@+id/sunset"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="160dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sunset"
+        android:textStyle="bold"
+        android:textColor="#F4511E"
+        android:textSize="15sp"
+        app:layout_constraintLeft_toRightOf="@id/sunrise"
+        app:layout_constraintTop_toBottomOf="@id/cloudiness_text" />
+
+
+    <TextView
+        android:id="@+id/sunset_text"
+        android:layout_marginLeft="60dp"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="20:31"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        android:format24Hour = "hh:mm"
+        app:layout_constraintLeft_toRightOf="@id/sunrise_text"
+        app:layout_constraintTop_toBottomOf="@id/sunset" />
+
+
+    <EditText
+        android:id="@+id/city"
+        app:layout_constraintTop_toBottomOf="@id/sunset_text"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="50dp"
+        android:textColor="#000000"
+        android:background="@drawable/stroke"
+        android:hint="Введите город"
+        android:inputType="textCapSentences"
+        android:paddingLeft="10dp"
+        android:textColorHint="#858585"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"/>
+
+    <Button
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        app:layout_constraintTop_toBottomOf="@id/city"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:id="@+id/btn_weather"
+        android:background="#F4511E"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Получить данные"/>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
