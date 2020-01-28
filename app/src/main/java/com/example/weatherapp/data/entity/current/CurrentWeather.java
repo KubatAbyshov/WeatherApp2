@@ -1,12 +1,13 @@
 
-package com.example.weatherapp.data.entity;
+package com.example.weatherapp.data.entity.current;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class CurrentWeather {
+public class CurrentWeather implements Serializable {
 
     @SerializedName("coord")
     @Expose
@@ -44,6 +45,18 @@ public class CurrentWeather {
     @SerializedName("cod")
     @Expose
     private Integer cod;
+
+    @SerializedName("dt_txt")
+    private String dateTimeForCast;
+
+    public String getDateTimeForCast() {
+        return dateTimeForCast;
+    }
+
+    public void setDateTimeForCast(String dateTimeForCast) {
+        this.dateTimeForCast = dateTimeForCast;
+    }
+
 
     public Coord getCoord() {
         return coord;

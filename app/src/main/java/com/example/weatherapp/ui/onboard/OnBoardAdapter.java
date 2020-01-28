@@ -16,7 +16,6 @@ import java.util.ArrayList;
 
 
 public class OnBoardAdapter extends PagerAdapter {
-    private Context context;
 
     private ArrayList<OnBoardEntity> resource;
 

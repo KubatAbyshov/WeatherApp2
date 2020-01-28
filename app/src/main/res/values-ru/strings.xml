@@ -1,12 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">WeatherApp</string>
     <string name="hello">Hello World!</string>
     <string name="skip">skip</string>
     <string name="celsius">%s °C</string>
-    <string name="update">update</string>
-    <string name="map">map</string>
+
     <plurals name="toys">
-        <item quantity="one">%d toy</item>
-        <item quantity="other">%d toys</item>
+        <item quantity="one">%d игрушка</item>
+        <item quantity="few">%d игрушки</item>
+        <item quantity="many">%d игрушек</item>
     </plurals>
 </resources>

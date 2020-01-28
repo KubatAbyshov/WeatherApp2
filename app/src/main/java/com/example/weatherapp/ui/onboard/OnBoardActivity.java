@@ -60,7 +60,7 @@ public class OnBoardActivity extends BaseActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.skip:
-                MainActivity.start(this);
+                start(OnBoardActivity.this);
                 finish();
                 break;
         }
@@ -107,7 +107,7 @@ public class OnBoardActivity extends BaseActivity {
                 if (pager.getCurrentItem() == 3) {
                     button.setText("Finish");
                     button.setOnClickListener(v -> {
-                        MainActivity.start(OnBoardActivity.this);
+                        start(OnBoardActivity.this);
                         finish();
                     });
                 } else {

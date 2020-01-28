@@ -5,4 +5,9 @@
     <dimen name="btn_onboard_size">300dp</dimen>
     <dimen name="onBoardMargin">300dp</dimen>
     <dimen name="onBoardPictureMargin">50dp</dimen>
+    <dimen name="marginTop">20dp</dimen>
+    <dimen name="marginLeft">30dp</dimen>
+    <dimen name="margin10">10dp</dimen>
+    <dimen name="paddingLeft">10dp</dimen>
+    <dimen name="margin30">30dp</dimen>
 </resources>
